@@ -13,15 +13,26 @@ let peso = tdpeso.textContent;
 
 let tdAltura = paciente.querySelector(".info-altura");
 let Altura = tdAltura.textContent;
-console.log(Altura)
+
+let pesoValido = true;
+let alturaValida = true;
+
+//VALIDAR DADOS
+if (peso <= 0  || peso > 1000){
+    console.log("peso invalido"); 
+    pesoValido = false  
+}
+if (Altura <= 0 ){
+    console.log("altura invalido"); 
+    alturaValida = true  
+}
+if (pesoValido == true && alturaValida == true)
+{
 //calcular o IMC
 let imc = peso / Altura ** 2;
-
-
-//pegar a altura
-
 // calcular IMC
 
 //escrever O iMC na tabela
 let tdImc = paciente.querySelector(".info-imc");
 tdImc.textContent = imc;
+}
